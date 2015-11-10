@@ -1,0 +1,34 @@
+[user]
+	email = pam.cdm@gmail.com
+	name = Pamela Mori
+[core]
+	editor = vim
+  excludesfile = ~/.gitignore
+[push]
+	default = simple
+[alias]
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%C(yellow)%h %Cblue%aN %Cgreen%ar %Creset%s'
+  ls = log --stat
+  last = log -1 HEAD
+  w = log --name-status #short whatchanged
+  s = show
+  d = diff
+  dc = diff --cached
+  ds = diff --staged
+  st = status
+  ss = status -s
+  ci = commit
+  co = checkout
+  cp = cherry-pick
+  cf = "!git ss | grep UU --color"
+  ccf = "!git ss | grep UU --color | wc -l"
+  unstage = reset HEAD --
+  pr = pull --rebase
+  prom = pull --rebase origin master
+	df = diff --cached --color --color-words
+	dff = diff --color --color-words
+	current-branch = rev-parse --abbrev-ref HEAD
+	graph = log --graph --decorate --oneline --branches
+[color]
+	ui = auto
