@@ -8,6 +8,7 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWCOLORHINTS=1
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+export PATH=/usr/local/bin/subl/:/usr/local/bin/atom/:usr/local/bin/mvim:$PATH
 
 alias grep='grep --color=auto'
 alias ls='ls -G'
