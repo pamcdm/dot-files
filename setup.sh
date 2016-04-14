@@ -19,6 +19,7 @@ git_ignore_configuration() {
 vim_configuration() {
   echo "**** configure vim"
   rm -rf ~/.vim/
+
   echo "install bundle"
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
@@ -26,9 +27,10 @@ vim_configuration() {
   cp .vimrc ~/
 
   echo "install colors"
-  rm -rf ~/Downloads/monokai-colors
-  git clone git@github.com:tomasr/molokai.git ~/Downloads/monokai-colors
-  cp -R ~/Downloads/monokai-colors/colors ~/.vim/
+  mkdir ~/.vim/colors
+  rm -rf ~/Downloads/vim-monokai
+  git clone git@github.com:sickill/vim-monokai.git ~/Downloads/vim-monokai
+  cp ~/Downloads/vim-monokai/colors/monokai.vim ~/.vim/colors/
 
   echo "install plugins"
   vim +PluginInstall +qall

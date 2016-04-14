@@ -12,11 +12,19 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 
+cnoreabbr nf NERDTreeFind
+
+let g:ctrlp_max_files = 20000
+let g:ctrlp_max_depth = 70
+nnoremap <c-b> :CtrlPBuffer<CR>
+
 " Themes and bars
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'flazz/vim-colorschemes'
 
+syntax enable
 colorscheme monokai
+
 set background=dark
 set guifont=Menlo:h14
 set noerrorbells
@@ -58,6 +66,9 @@ set undodir=$TMPDIR
 set incsearch
 set hidden
 
+au FocusLost * :wall
+au BufWrite * :call DeleteTrailingWS()
+
 " Languages and Filetypes
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
@@ -77,4 +88,5 @@ au BufRead,BufNew Gemfile set ft=ruby
 au BufRead,BufNew Guardfile set ft=ruby
 au BufRead,BufNew Procfile set ft=ruby
 
-filetype plugin indent on
+set wildignore+=*.o,*.obj,.git,tmp/**,build/**,coverage/**,node_modules/**
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
