@@ -3,8 +3,11 @@ bootstrap() {
   check_and_install_homebrew
   check_and_install_homebrew_cask
 
-  brew cask install sublime-text
-  brew cask install atom 
+  brew tap caskroom/versions
+
+  brew cask install sublime-text3
+  brew cask install macvim
+  brew cask install atom
   brew cask install google-chrome
   brew cask install firefox
   brew cask install evernote
