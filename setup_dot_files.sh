@@ -27,11 +27,8 @@ vim_configuration() {
   cp .vimrc ~/
 
   echo "install colors"
-  mkdir ~/.vim/colors
+  cp -r .vim/colors ~/.vim/
 
-  rm -rf ~/Downloads/vim-monokai
-  git clone git@github.com:sickill/vim-monokai.git ~/Downloads/vim-monokai
-  sudo cp ~/Downloads/vim-monokai/colors/monokai.vim ~/.vim/colors/
 
   echo "install plugins"
   vim +PluginInstall +qall
